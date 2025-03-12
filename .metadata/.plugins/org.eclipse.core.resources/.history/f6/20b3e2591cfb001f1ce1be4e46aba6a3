@@ -1,0 +1,19 @@
+package com.example.sample1app;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * Spring Boot アプリケーションのエントリーポイント
+ * @SpringBootApplication → Spring Boot の基本設定を自動適用
+ * @RestController → このクラスが REST API を提供することを示す
+ */
+
+@SpringBootApplication
+public class SampleBootApp1Application {
+    public static void main(String[] args) {
+        SpringApplication.run(SampleBootApp2Application.class, args);
+    }
+
+}

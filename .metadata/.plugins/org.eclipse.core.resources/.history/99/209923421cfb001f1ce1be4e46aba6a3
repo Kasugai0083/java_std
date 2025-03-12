@@ -1,0 +1,57 @@
+package com.example.sample1app;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * Spring Boot アプリケーションのエントリーポイント
+ * @SpringBootApplication → Spring Boot の基本設定を自動適用
+ * @RestController → このクラスが REST API を提供することを示す
+ */
+
+@RestController
+public class SampleBootApp1Application {
+
+    // ユーザーデータ（仮のデータ）
+    // 各配列の要素は {"名前", "メールアドレス", "年齢"}
+    String[][] data = {
+            {"noname", "no email address", "0"},
+            {"taro", "taro@yamada", "39"},
+            {"hanako", "hanako@flower", "28"},
+            {"sachiko", "sachiko@happy", "17"},
+            {"jiro", "jiro@change", "6"}
+    };
+
+    /**
+     * メインメソッド
+     * Spring Boot のアプリケーションを起動
+     */
+    public static void main(String[] args) {
+        SpringApplication.run(SampleBootApp1Application.class, args);
+    }
+
+    /**
+     * 指定された ID（`num`）に対応するユーザーデータを返す
+     * @PathVariable → URL の `{num}` を引数 `num` にバインドする
+     * 
+     * 例: `http://localhost:8080/2` にアクセスすると
+     * → `ID=2. {name: hanako, mail: hanako@flower, age: 28}` を返す
+     */
+    @RequestMapping("/{num}")
+    public String index(@PathVariable int num) {
+        // num の範囲チェック
+        // `num` が 0 未満なら `0`、`num` が配列の範囲外なら `0`、それ以外は `num`
+        int n = num < 0 ? 0 : (num >= data.length ? 0 : num);
+
+        // `n` に対応するユーザーデータを取得
+        String[] item = data[n];
+
+        // 返却するメッセージのフォーマット
+        String msg = "ID=%s. {name: %s, mail: %s, age: %s}";
+
+        // `String.format()` を使ってプレースホルダー `%s` に値を埋め込む
+        return String.format(msg, num, item[0], item[1], item[2]);
+    }
+}

@@ -1,0 +1,6 @@
+package com.example.sample1app;
+
+@Repository
+public class PersonDAOPersonImpl {
+
+}

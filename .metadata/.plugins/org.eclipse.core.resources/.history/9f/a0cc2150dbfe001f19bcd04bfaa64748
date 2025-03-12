@@ -1,0 +1,23 @@
+package com.example.sample1app;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.example.sample1app.repositories.PersonRepository;
+
+
+@Controller
+public class HelloController {
+
+	@Autowired
+	PersonRepository repository;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

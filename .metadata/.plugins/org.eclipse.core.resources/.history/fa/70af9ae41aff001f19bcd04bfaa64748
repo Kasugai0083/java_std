@@ -1,0 +1,5 @@
+package com.example.sample1app;
+
+public interface PersonDAO <T> extends Serializable{
+
+}

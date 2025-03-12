@@ -1,0 +1,5 @@
+yieldUnescaped '<!DOCTYPE html>'
+
+html(lang:'ja'){
+	
+}

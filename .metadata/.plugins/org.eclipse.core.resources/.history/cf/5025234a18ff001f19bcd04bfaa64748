@@ -1,0 +1,7 @@
+package com.example.sample1app;
+
+@Documented
+@Constraint(validatedBy = PhoneValidator.class)
+public interface Phone {
+
+}

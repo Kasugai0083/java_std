@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="リソース名 &apos;SampleBootApp1/src/main/java/com/example/sample1app/TestRestController.java&apos; を &apos;SampleBootApp2Application.java&apos; に変更します" description="リソース &apos;TestRestController.java&apos; の名前変更" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/java/com/example/sample1app/TestRestController.java" name="SampleBootApp2Application.java" stamp="1741325330048" updateReferences="true"/>
+</session>

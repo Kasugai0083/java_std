@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">	
+	<title>top page</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF^8"/>
+	<link href="https://cdn.jsdelivr.net/npm/boostrap@5.0.2/dist/css/boostrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+	<h1 class="display-4">Hello page</h1>
+	<p class="msg">this is sample page.</p>
+</body>
+</html>

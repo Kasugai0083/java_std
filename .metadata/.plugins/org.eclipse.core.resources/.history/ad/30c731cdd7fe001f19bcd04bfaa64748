@@ -1,0 +1,7 @@
+package com.example.sample1app.repositories;
+
+
+@Repository
+public interface PersonRepository {
+
+}

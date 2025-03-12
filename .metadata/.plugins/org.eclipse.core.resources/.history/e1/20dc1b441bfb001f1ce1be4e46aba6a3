@@ -1,0 +1,30 @@
+package com.example.sample1app;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SampleBootApp2Application {
+	
+	DataObject[] data = {
+			new DataObject("noname","no email address",0),
+			new DataObject("taro","taro@yamada",39),
+			new DataObject("hanako","hanako@flower",28),
+			new DataObject("sachiko","sachiko@happy",17),
+			new DataObject("jiro","jiro@change",6)
+	};
+	
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		SpringApplication.run(SampleBootApp2Application.class, args);
+	}
+	
+	@RequestMapping("/{num}")
+	public DataObject index(@PathVariable int num) {
+		int n = num < 0 ? 0 : num >= data.length ? 0 : num;
+		return data[n];
+	}
+}
+class DataObject{
+	
+}

@@ -1,0 +1,13 @@
+package com.example.sample1app;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class SampleBootApp2Application {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
+
+}

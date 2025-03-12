@@ -1,0 +1,5 @@
+spring.application.name=SampleBootApp1
+
+spring.mustache.servlet.cache=false
+spring.mustache.prefix=classpath:/templates/
+spring.mustache.suffix=.html

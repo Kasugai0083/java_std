@@ -1,0 +1,7 @@
+package com.example.sample1app;
+
+import java.io.Serializable;
+
+public interface PersonDAO <T> extends Serializable{
+	public List<t> getAll();
+}

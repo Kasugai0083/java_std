@@ -1,0 +1,14 @@
+package com.example.sample1app;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+
+import jakarta.validation.Constraint;
+
+@Documented
+@Constraint(validatedBy = PhoneValidator.class)
+@Target({ElementType.METHOD, ElementType.FIELD})
+
+public interface Phone {
+	
+}

@@ -1,0 +1,5 @@
+package com.example.sample1app.repositories;
+
+public class PhoneValidator implements ConstrainValidator<Phone,String>{
+	
+}

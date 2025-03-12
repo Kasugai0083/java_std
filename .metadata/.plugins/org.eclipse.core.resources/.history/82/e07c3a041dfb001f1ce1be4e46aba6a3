@@ -1,0 +1,7 @@
+package com.example.sample1app;
+
+
+@RestController
+public class SampleBootApp3Application {
+	
+}

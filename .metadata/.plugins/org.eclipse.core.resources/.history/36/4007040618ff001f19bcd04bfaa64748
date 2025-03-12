@@ -1,0 +1,7 @@
+package com.example.sample1app;
+
+import jakarta.validation.ConstraintValidator;
+
+public class PhoneValidator implements ConstraintValidator<Phone,String>{
+	
+}

@@ -1,0 +1,13 @@
+package com.example.sample1app;
+
+import jakarta.validation.ConstraintValidator;
+
+public class PhoneValidator implements ConstraintValidator<Phone,String>{
+	@Override
+	public void initialize(Phone phone) {}
+	
+	@Override
+	public boolean isValid(String input, ConstraintValidatorContext cxt) {
+		
+	}
+}
