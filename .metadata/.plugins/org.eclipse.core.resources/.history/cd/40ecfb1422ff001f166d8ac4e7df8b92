@@ -137,7 +137,7 @@ public class HelloController {
 	@RequestMapping(value = "/find", method = RequestMethod.GET)
 	public ModelAndView index(ModelAndView mav) {
 		mav.setViewName("find");
-		mav.addObject("title", "Find Person.");
+		mav.addObject("title", "Findw Person.");
 		mav.addObject("msg","Personのサンプルです。");
 		Iterable<Person> list = dao.getAll();
 		mav.addObject("data", list);
