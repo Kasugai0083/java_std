@@ -43,11 +43,18 @@ public class HelloController {
 	
 	@RequestMapping("/")
 	public ModelAndView index(ModelAndView mav,@ModelAttribute("formModel") Person Person) {
+//		mav.setViewName("index");
+//		mav.addObject("title", "Hello page");
+//		mav.addObject("msg", "this is JPA sample data.");
+//		List<Person> list = repository.findAllOrderByName();
+//		mav.addObject("data", list);
+//		return mav;
+		
 		mav.setViewName("index");
-		mav.addObject("title", "Hello page");
-		mav.addObject("msg", "this is JPA sample data.");
-		List<Person> list = repository.findAllOrderByName();
-		mav.addObject("data", list);
+		mav.addObject("title", "Hello Page");
+		mav.addObject("msg", "this is JPA sample data");
+		List<Person> list = dao.getAll();
+		mav.addObject("data",list);
 		return mav;
 	}
 	
@@ -134,21 +141,49 @@ public class HelloController {
 	
 	@RequestMapping(value = "/find", method = RequestMethod.POST)
 	public ModelAndView search(HttpServletRequest request, ModelAndView mav) {
+//		mav.setViewName("find");
+//		String param = request.getParameter("find_str");
+//		
+//		if(param == "") {
+//			mav = new ModelAndView("redirect:/find");
+//		}else {
+//			mav.addObject("title", "Find result.");
+//			mav.addObject("msg","「" + param + "」の検索結果");
+//			mav.addObject("value", param);
+//			
+//			List<Person> list = dao.find(param);
+//			mav.addObject("data", list);
+//			
+//		}
+//		
+//		return mav;
+		
+//		mav.setViewName("find");
+//		String param = request.getParameter("find_str");
+//		if(param == "") {
+//			mav = new ModelAndView("redirect:/find");
+//		}else {
+//			String[] params = param.split(",");
+//			mav.addObject("title", "Find result");
+//			mav.addObject("msg", "「" + param + "」の検索結果");
+//			mav.addObject("value", param);
+//			
+//			List<Person> list = repository.findByAge(
+//					Integer.parseInt(params[0]),
+//					Integer.parseInt(params[1])
+//					);
+//			mav.addObject("data", list);
+//		}
+//		return mav;
+		
 		mav.setViewName("find");
 		String param = request.getParameter("find_str");
-		
 		if(param == "") {
 			mav = new ModelAndView("redirect:/find");
 		}else {
-			mav.addObject("title", "Find result.");
-			mav.addObject("msg","「" + param + "」の検索結果");
-			mav.addObject("value", param);
-			
 			List<Person> list = dao.find(param);
-			mav.addObject("data", list);
-			
+			mav.addObject("data",list);
 		}
-		
 		return mav;
 	}
 	
@@ -163,8 +198,15 @@ public class HelloController {
 		return mav;
 	}
 	
-	
-	
+	@RequestMapping(value = "/page/{page}",method = RequestMethod.GET)
+	public ModelAndView index(ModelAndView mav, @PathVariable int page) {
+		mav.setViewName("find");
+		mav.addObject("msg","Personのサンプルです。");
+		int num = 2;
+		Iterable<Person> list = dao.getPage(page, num);
+		mav.addObject("data", list);
+		return mav;
+	}
 	
 	
 	

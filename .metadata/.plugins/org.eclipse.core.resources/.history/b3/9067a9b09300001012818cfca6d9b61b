@@ -1,0 +1,14 @@
+package com.example.sample1app.repositories;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/msg")
+public class MessageController {
+	
+	@Autowired
+	MessageRepository repository;
+	
+	
+}

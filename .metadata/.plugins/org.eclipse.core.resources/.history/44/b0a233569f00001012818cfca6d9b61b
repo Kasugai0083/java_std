@@ -1,0 +1,29 @@
+package com.example.sample1app.repositories;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.criteria.CriteriaBuilder;
+
+import org.springframework.stereotype.Repository;
+
+import com.example.sample1app.Message;
+import com.example.sample1app.PersonDAO;
+
+@Repository
+public class PersonDAOMessageImpl implements PersonDAO<Message>{
+	private static final long serialVersionID = 1L;
+	
+	@PersistenceContext
+	private EntityManager entityManager;
+	
+	public PersonDAOMessageImpl() {super();}
+	
+	@Override
+	public List<Message> getAll(){
+		List<Message> list = null;
+		
+		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+		
+		
+	}
+}

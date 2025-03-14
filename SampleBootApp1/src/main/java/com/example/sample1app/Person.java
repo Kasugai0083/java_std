@@ -1,11 +1,13 @@
 package com.example.sample1app;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
@@ -14,13 +16,18 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table(name="people")
-@NamedQuery(
-	name = "findWithName",
-	query = "from Person where name like :fname"
-)
-
+@Table(name="Person")
 public class Person {
+	
+	@OneToMany(mappedBy="Person")
+	@Column(nullable = true)
+	private List<Message> messages;
+	
+	public List<Message> getMessages(){
+		return messages;
+	}
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column

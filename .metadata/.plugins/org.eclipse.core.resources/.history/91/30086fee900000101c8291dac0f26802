@@ -1,0 +1,21 @@
+package com.example.sample1app;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "msgdata")
+public class Message {
+	@Id
+	@GeneratedValue(starategy = GenerationType.AUTO)
+	@Column
+	@Notnull
+	private long id;
+	
+	@Column(nullable = false)
+	@NotBlank
+	private String content;
+	
+	
+	
+}
