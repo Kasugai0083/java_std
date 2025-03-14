@@ -4,4 +4,5 @@
     <fullyQualifiedTypeName name="org.springframework.boot.Banner.Mode"/>
     <fullyQualifiedTypeName name="org.springframework.boot.SpringApplication"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletRequest"/>
 </qualifiedTypeNameHistroy>
